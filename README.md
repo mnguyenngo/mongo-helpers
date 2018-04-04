@@ -14,12 +14,14 @@
 
 [screenshot]: /images/screenshot.png
 
-## PyMongo Syntax for reference
+## PyMongo Syntax for Reference
 (mongo_helper syntax in comments)
 
 ```python
 client = MongoClient(host, address)
-db = client[db_name]  # use get_db_names()
-c = db[collection_name]  # use get_collection_names(db)
+client.database_names() # use get_db_names()
+db = client[db_name]
+db.collection_names()  # use get_collection_names(db)
+c = db[collection_name]  
 df = pd.DataFrame(list(c.find()))  # use convert_db_to_df(db, c)
 ```
